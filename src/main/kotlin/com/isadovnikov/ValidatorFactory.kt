@@ -79,7 +79,9 @@ class ValidatorFactory<K>(
                 }
             }
         }
-        constraintClass.message(constraint.errorMessage)
+        constraint.errorMessage?.also {
+            constraintClass.message(it)
+        }
         property.constraint(constraintClass)
     }
 
