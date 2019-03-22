@@ -26,7 +26,7 @@ class ValidatorFactory<K>(
 
     init {
         validationRules.map {
-           it.key to it.classes
+            it.key to it.classes
         }.forEach { pair ->
             val constraintMapping = DefaultConstraintMapping()
             pair.second.forEach {
@@ -70,7 +70,7 @@ class ValidatorFactory<K>(
         constraint: ValidationConstraint
     ) {
         val constraintClass = Class.forName(constraint.type).newInstance() as ConstraintDef<*, *>
-        when(constraintClass) {
+        when (constraintClass) {
             is PatternDef -> {
                 constraint.parameters?.firstOrNull {
                     it.key == "regex"
@@ -82,13 +82,8 @@ class ValidatorFactory<K>(
         constraintClass.message(constraint.errorMessage)
         property.constraint(constraintClass)
     }
+
+    fun getConditions(key: K) {
+        //TODO implement get Conditions
+    }
 }
-
-data class ValidationCondition(
-    val type: String,
-    val field: String,
-    val errorMessage: String,
-    val parameters: List<Pair<String, String>>
-)
-
-
