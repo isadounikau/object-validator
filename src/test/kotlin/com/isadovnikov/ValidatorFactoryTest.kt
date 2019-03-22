@@ -12,7 +12,7 @@ class ValidatorFactoryTest {
     init {
         val fileText = this::class.java.classLoader.getResource("test-rules-list.json").readText()
         val rule = Gson().fromJson<ValidationRule<String>>(fileText, ValidationRule::class.java)
-        validatorFactory = ValidatorFactory(listOf(rule))
+        validatorFactory = ValidatorFactoryImpl(listOf(rule))
     }
 
     @Test
@@ -21,6 +21,14 @@ class ValidatorFactoryTest {
         val test = TestDTO("", "")
 
         val result = validatorFactory.validate(key, test)
+        println(result)
+    }
+
+    @Test
+    fun getConstraints() {
+        val key = "key"
+
+        val result = validatorFactory.getConstraints(key)
         println(result)
     }
 }
