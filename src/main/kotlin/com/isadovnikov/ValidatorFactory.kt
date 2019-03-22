@@ -70,17 +70,12 @@ class ValidatorFactory<K>(
         constraint: ValidationConstraint
     ) {
         val constraintClass = Class.forName(constraint.type).newInstance() as ConstraintDef<*, *>
-        when (constraintClass) {
-            is PatternDef -> {
-                constraint.parameters?.firstOrNull {
-                    it.key == "regex"
-                }.also {
-                    constraintClass.regexp(it?.value)
-                }
-            }
-        }
         constraint.errorMessage?.also {
             constraintClass.message(it)
+        }
+        constraint.parameters?.forEach {
+            val method = constraintClass.javaClass.getMethod(it.key, String::class.java)
+            method.invoke(constraintClass, it.value)
         }
         property.constraint(constraintClass)
     }
