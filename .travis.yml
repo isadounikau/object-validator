@@ -5,3 +5,4 @@ after_success:
 
 script:
   - gradle clean test
+  - gradle jacocoTestReport
