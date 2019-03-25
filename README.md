@@ -4,8 +4,15 @@
 
 Simple Object Validator based on Hibernate validation library
 
-Rules can be build by code or in the JSON format
+Rules can be build by code or in the JSON format 
+
+* `KeyObject` is any object you want to use as a key for your validation rules 
+* `classes` is a classes you want to validate 
+* `fields` is a fields you want to validate 
+* `constraints` is validation rules 
+
 ```
+val key = KeyObject(officeId = 57, anotherField = "value")
 val rule = DefaultConstraintMapping()
 rule.type(TestDTO::class.java)
    .property("id", ElementType.FIELD)
