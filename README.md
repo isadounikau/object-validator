@@ -4,6 +4,18 @@
 
 Simple Object Validator based on Hibernate validation library
 
+Rules can be build by code or in the JSON format
+```
+val rule = DefaultConstraintMapping()
+rule.type(TestDTO::class.java)
+   .property("id", ElementType.FIELD)
+   .constraint(NotEmptyDef().message("errorMessage"))
+   .constraint(PatternDef().message("errorMessage").regexp("\\b[A-Z0-9._%-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b"))
+
+validatorFactory.add(key, rule)
+validatorFactory.validate(key, TestDTO("non valid"))
+```
+
 Representation of a file with rules for validation:
 ```
 {
