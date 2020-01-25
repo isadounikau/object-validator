@@ -1,6 +1,6 @@
-package com.isadovnikov
+package com.isadounikau
 
-import com.isadovnikov.model.*
+import com.isadounikau.model.*
 import org.hibernate.validator.HibernateValidator
 import org.hibernate.validator.HibernateValidatorConfiguration
 import org.hibernate.validator.cfg.ConstraintDef
@@ -11,7 +11,6 @@ import org.hibernate.validator.internal.cfg.context.DefaultConstraintMapping
 import org.hibernate.validator.internal.engine.valueextraction.ValueExtractorManager
 import org.hibernate.validator.internal.metadata.core.ConstraintHelper
 import org.hibernate.validator.internal.metadata.core.MetaConstraint
-import org.hibernate.validator.internal.metadata.raw.BeanConfiguration
 import org.hibernate.validator.internal.metadata.raw.ConstrainedElement
 import org.hibernate.validator.internal.util.TypeResolutionHelper
 import java.lang.RuntimeException

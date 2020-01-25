@@ -1,8 +1,8 @@
-package com.isadovnikov
+package com.isadounikau
 
 import com.google.gson.Gson
 import org.junit.Test
-import com.isadovnikov.model.ValidationRule
+import com.isadounikau.model.ValidationRule
 
 
 class ValidatorFactoryTest {
@@ -10,7 +10,7 @@ class ValidatorFactoryTest {
     private val validatorFactory: ValidatorFactory<String>
 
     init {
-        val fileText = this::class.java.classLoader.getResource("test-rules-list.json").readText()
+        val fileText = this::class.java.classLoader.getResource("test-rules-list.json")!!.readText()
         val rule = Gson().fromJson<ValidationRule<String>>(fileText, ValidationRule::class.java)
         validatorFactory = ValidatorFactoryImpl(listOf(rule))
     }

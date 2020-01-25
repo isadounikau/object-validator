@@ -4,7 +4,7 @@ plugins {
 
 apply plugin: 'jacoco'
 
-group 'com.isadovnikov'
+group 'com.isadounikau'
 version '1.0-SNAPSHOT'
 
 repositories {

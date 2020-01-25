@@ -32,7 +32,7 @@ Representation of a file with rules for validation:
   },
   "classes": [
     {
-      "name": "com.isadovnikov.TestDTO",
+      "name": "com.isadounikau.TestDTO",
       "fields": [
         {
           "name": "id",

@@ -1,4 +1,4 @@
-package com.isadovnikov.model
+package com.isadounikau.model
 
 data class ValidationRule<K>(
     val key: K,
