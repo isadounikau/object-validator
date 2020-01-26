@@ -2,7 +2,7 @@
   "key": "key",
   "classes": [
     {
-      "name": "com.isadounikaue.TestDTO",
+      "name": "com.isadounikau.TestDTO",
       "fields": [
         {
           "name": "id",
