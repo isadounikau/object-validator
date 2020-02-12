@@ -1,6 +1,7 @@
 # object-validator 
 [![Build Status](https://travis-ci.com/isadounikau/object-validator.svg?branch=master)](https://travis-ci.com/isadounikau/object-validator)
 [![codecov](https://codecov.io/gh/Sadovnikov94/object-validator/branch/master/graph/badge.svg)](https://codecov.io/gh/Sadovnikov94/object-validator)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.isadounikau/object-validator/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.isadounikau/object-validator/badge.svg)
 
 Simple Object Validator based on Hibernate validation library
 
